@@ -21,18 +21,18 @@ const Navigation = () => {
     }`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="font-playfair text-2xl font-bold text-foreground">
+          <div className="font-playfair text-2xl font-bold text-white">
             Titan Automation
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#services" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="#services" className="text-white/80 hover:text-white transition-colors">
               Services
             </a>
-            <a href="#edge" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="#edge" className="text-white/80 hover:text-white transition-colors">
               Our Edge
             </a>
-            <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="#pricing" className="text-white/80 hover:text-white transition-colors">
               Pricing
             </a>
           </div>
