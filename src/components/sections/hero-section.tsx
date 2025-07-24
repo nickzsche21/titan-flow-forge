@@ -38,14 +38,14 @@ const HeroSection = () => {
         />
       </div>
 
-      <div className="relative container mx-auto px-6 text-center">
+      <div className="relative container mx-auto px-6 text-center pt-24 md:pt-16">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-playfair font-bold text-foreground mb-8 leading-tight animate-fade-in">
+          <h1 className="text-4xl md:text-7xl lg:text-8xl font-playfair font-bold text-white mb-8 leading-tight animate-fade-in">
             Automate Your Work.{' '}
             <span className="text-gradient-gold animate-glow">Scale With Ease.</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed animate-slide-up">
+          <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed animate-slide-up">
             Titan Automation builds custom AI-powered systems to free up your time & maximize your business output.
           </p>
 

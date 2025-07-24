@@ -9,13 +9,13 @@ All colors MUST be HSL. Fonts: Inter (body), Playfair Display (headings)
 @layer base {
   :root {
     /* Luxury Color Palette - Premium Dark Theme */
-    --background: 222 84% 4%;
-    --foreground: 210 40% 98%;
+    --background: 222 84% 3%;
+    --foreground: 0 0% 100%;
     
     /* Card & Surface Colors */
-    --card: 222 84% 6%;
-    --card-foreground: 210 40% 98%;
-    --card-hover: 222 84% 8%;
+    --card: 222 84% 5%;
+    --card-foreground: 0 0% 100%;
+    --card-hover: 222 84% 7%;
     
     /* Popover Colors */
     --popover: 222 84% 6%;
@@ -31,7 +31,7 @@ All colors MUST be HSL. Fonts: Inter (body), Playfair Display (headings)
     
     /* Muted - Subtle Dark Grays */
     --muted: 222 84% 10%;
-    --muted-foreground: 215 20.2% 65%;
+    --muted-foreground: 215 20% 75%;
     
     /* Accent - Bright Gold */
     --accent: 45 100% 70%;
