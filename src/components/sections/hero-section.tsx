@@ -22,15 +22,19 @@ const HeroSection = () => {
         backgroundBlendMode: 'overlay'
       }}
     >
-      {/* Subtle animated background elements */}
-      <div className="absolute inset-0 opacity-20">
+      {/* Animated background elements with premium effects */}
+      <div className="absolute inset-0 opacity-30">
         <div 
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl"
-          style={{ transform: `translateY(${scrollY * 0.3}px)` }}
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float"
+          style={{ transform: `translateY(${scrollY * 0.3}px)`, animationDelay: '0s' }}
         />
         <div 
-          className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl"
-          style={{ transform: `translateY(${scrollY * -0.2}px)` }}
+          className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl animate-float"
+          style={{ transform: `translateY(${scrollY * -0.2}px)`, animationDelay: '2s' }}
+        />
+        <div 
+          className="absolute top-1/2 right-1/3 w-64 h-64 bg-primary/5 rounded-full blur-2xl animate-pulse-slow"
+          style={{ transform: `translateY(${scrollY * 0.1}px)` }}
         />
       </div>
 
@@ -38,7 +42,7 @@ const HeroSection = () => {
         <div className="max-w-5xl mx-auto">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-playfair font-bold text-foreground mb-8 leading-tight animate-fade-in">
             Automate Your Work.{' '}
-            <span className="text-gradient-gold">Scale With Ease.</span>
+            <span className="text-gradient-gold animate-glow">Scale With Ease.</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed animate-slide-up">

@@ -8,39 +8,40 @@ All colors MUST be HSL. Fonts: Inter (body), Playfair Display (headings)
 
 @layer base {
   :root {
-    /* Luxury Color Palette - Pure, Minimal, Premium */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 5%;
+    /* Luxury Color Palette - Premium Dark Theme */
+    --background: 222 84% 4%;
+    --foreground: 210 40% 98%;
     
     /* Card & Surface Colors */
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 5%;
-    --card-hover: 0 0% 98%;
+    --card: 222 84% 6%;
+    --card-foreground: 210 40% 98%;
+    --card-hover: 222 84% 8%;
     
     /* Popover Colors */
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 5%;
+    --popover: 222 84% 6%;
+    --popover-foreground: 210 40% 98%;
     
-    /* Primary - Deep Black for Authority */
-    --primary: 0 0% 5%;
-    --primary-foreground: 0 0% 98%;
+    /* Primary - Gold for Premium Touch */
+    --primary: 45 100% 65%;
+    --primary-foreground: 222 84% 4%;
     
-    /* Secondary - Soft Gray for Elegance */
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 20%;
+    /* Secondary - Dark Surface */
+    --secondary: 222 84% 8%;
+    --secondary-foreground: 210 40% 98%;
     
-    /* Muted - Subtle Grays */
-    --muted: 0 0% 94%;
-    --muted-foreground: 0 0% 45%;
+    /* Muted - Subtle Dark Grays */
+    --muted: 222 84% 10%;
+    --muted-foreground: 215 20.2% 65%;
     
-    /* Accent - Gold Metallic for Premium Touch */
-    --accent: 45 100% 65%;
-    --accent-foreground: 0 0% 5%;
+    /* Accent - Bright Gold */
+    --accent: 45 100% 70%;
+    --accent-foreground: 222 84% 4%;
     
     /* Luxury Gradients */
     --gradient-gold: linear-gradient(135deg, 45 100% 65%, 35 100% 55%);
-    --gradient-chrome: linear-gradient(135deg, 0 0% 85%, 0 0% 95%, 0 0% 85%);
-    --gradient-hero: linear-gradient(180deg, 0 0% 100%, 0 0% 98%);
+    --gradient-chrome: linear-gradient(135deg, 222 84% 15%, 222 84% 8%, 222 84% 15%);
+    --gradient-hero: linear-gradient(135deg, 222 84% 4%, 222 84% 6%, 222 84% 4%);
+    --gradient-premium: linear-gradient(135deg, 222 84% 2%, 222 84% 8%, 45 100% 15%);
     
     /* Premium Shadows */
     --shadow-soft: 0 4px 24px -4px rgba(0, 0, 0, 0.06);
@@ -56,8 +57,8 @@ All colors MUST be HSL. Fonts: Inter (body), Playfair Display (headings)
     --destructive-foreground: 0 0% 98%;
     
     /* Form Elements */
-    --border: 0 0% 90%;
-    --input: 0 0% 95%;
+    --border: 222 84% 15%;
+    --input: 222 84% 8%;
     --ring: 45 100% 65%;
     
     /* Border Radius */
@@ -111,7 +112,7 @@ All colors MUST be HSL. Fonts: Inter (body), Playfair Display (headings)
   }
 
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply bg-gradient-premium text-foreground font-inter;
   }
   
   /* Typography Hierarchy */
@@ -191,6 +192,18 @@ All colors MUST be HSL. Fonts: Inter (body), Playfair Display (headings)
   .animate-scale-in {
     animation: scaleIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse-slow 4s ease-in-out infinite;
+  }
 }
 
 @keyframes fadeIn {
@@ -223,5 +236,32 @@ All colors MUST be HSL. Fonts: Inter (body), Playfair Display (headings)
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 20px hsl(var(--accent)), 0 0 30px hsl(var(--accent)), 0 0 40px hsl(var(--accent));
+  }
+  to {
+    text-shadow: 0 0 30px hsl(var(--accent)), 0 0 40px hsl(var(--accent)), 0 0 50px hsl(var(--accent));
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
   }
 }

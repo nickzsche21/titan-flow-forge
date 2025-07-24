@@ -62,6 +62,7 @@ export default {
 				'gradient-gold': 'var(--gradient-gold)',
 				'gradient-chrome': 'var(--gradient-chrome)',
 				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-premium': 'var(--gradient-premium)',
 			},
 			boxShadow: {
 				'soft': 'var(--shadow-soft)',
