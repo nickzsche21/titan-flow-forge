@@ -2,57 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Titan Automation Design System - Luxury, Premium, Minimalist
+All colors MUST be HSL. Fonts: Inter (body), Playfair Display (headings)
 */
 
 @layer base {
   :root {
+    /* Luxury Color Palette - Pure, Minimal, Premium */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: 0 0% 5%;
+    
+    /* Card & Surface Colors */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 0 0% 5%;
+    --card-hover: 0 0% 98%;
+    
+    /* Popover Colors */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --popover-foreground: 0 0% 5%;
+    
+    /* Primary - Deep Black for Authority */
+    --primary: 0 0% 5%;
+    --primary-foreground: 0 0% 98%;
+    
+    /* Secondary - Soft Gray for Elegance */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 20%;
+    
+    /* Muted - Subtle Grays */
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 45%;
+    
+    /* Accent - Gold Metallic for Premium Touch */
+    --accent: 45 100% 65%;
+    --accent-foreground: 0 0% 5%;
+    
+    /* Luxury Gradients */
+    --gradient-gold: linear-gradient(135deg, 45 100% 65%, 35 100% 55%);
+    --gradient-chrome: linear-gradient(135deg, 0 0% 85%, 0 0% 95%, 0 0% 85%);
+    --gradient-hero: linear-gradient(180deg, 0 0% 100%, 0 0% 98%);
+    
+    /* Premium Shadows */
+    --shadow-soft: 0 4px 24px -4px rgba(0, 0, 0, 0.06);
+    --shadow-elegant: 0 8px 40px -8px rgba(0, 0, 0, 0.12);
+    --shadow-luxury: 0 16px 60px -12px rgba(0, 0, 0, 0.15);
+    
+    /* Animation Timing */
+    --transition-luxury: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    
+    /* Destructive Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* Form Elements */
+    --border: 0 0% 90%;
+    --input: 0 0% 95%;
+    --ring: 45 100% 65%;
+    
+    /* Border Radius */
+    --radius: 0.75rem;
+    --radius-small: 0.5rem;
+    --radius-large: 1rem;
   }
 
   .dark {
@@ -100,6 +111,117 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+  }
+  
+  /* Typography Hierarchy */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+  
+  /* Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Luxury Button Variants */
+  .btn-luxury {
+    @apply relative overflow-hidden bg-primary text-primary-foreground px-8 py-4 rounded-full font-medium transition-all duration-300 hover:shadow-luxury group;
+  }
+  
+  .btn-luxury-outline {
+    @apply relative overflow-hidden border-2 border-primary text-primary bg-transparent px-8 py-4 rounded-full font-medium transition-all duration-300 hover:bg-primary hover:text-primary-foreground group;
+  }
+  
+  .btn-gold {
+    @apply relative overflow-hidden bg-gradient-to-r from-amber-400 to-yellow-500 text-black px-8 py-4 rounded-full font-medium transition-all duration-300 hover:shadow-luxury hover:scale-105 group;
+  }
+  
+  /* Luxury Card */
+  .card-luxury {
+    @apply bg-card border border-border rounded-lg p-8 transition-all duration-300 hover:shadow-elegant hover:border-accent/20;
+  }
+  
+  /* Premium Section Spacing */
+  .section-padding {
+    @apply py-20 lg:py-32;
+  }
+  
+  /* Elegant Text Animations */
+  .text-reveal {
+    @apply opacity-0 transform translate-y-8 transition-all duration-700 ease-out;
+  }
+  
+  .text-reveal.visible {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  /* Luxury Gradient Text */
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent;
+  }
+  
+  /* Hover Effects */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:transform hover:-translate-y-2;
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+  
+  /* Parallax Elements */
+  .parallax-slow {
+    transform: translateY(var(--scroll-y, 0px));
+  }
+}
+
+@layer utilities {
+  /* Custom animations for luxury feel */
+  .animate-fade-in {
+    animation: fadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
